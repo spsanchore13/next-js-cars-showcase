@@ -1,22 +1,22 @@
-import { CarProps } from "@/types";
+import { CarProps, FilterProps } from "@/types";
 
 const axios = require('axios');
 
-console.log()
 
-export async function fetchCars() {
+export async function fetchCars(filters: FilterProps) {
+
     const options = {
         method: 'GET',
         url: 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars',
-        params: { model: 'q3' },
+        params: { ...filters },
         headers: {
-            'X-RapidAPI-Key': process.env.XRAPIDAPIKEY,
-            'X-RapidAPI-Host': process.env.XRAPIDHOST
+            'X-RapidAPI-Key': '04d2ef5322msh6483b4faa3ec632p153bcejsna15396b56d9d',
+            'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
         }
     };
     try {
         const response = await axios.request(options);
-        // console.log(response.data);
+
         return response.data;
     } catch (error) {
         console.error(error);
@@ -50,5 +50,15 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
     url.searchParams.append("modelYear", `${year}`)
     url.searchParams.append("angle", `${angle}`)
     return `${url}`
+}
+
+export const updateSearchParams = (type: string, value: string) => {
+    const searchParams = new URLSearchParams(window.location.search)
+
+    searchParams.set(type, value)
+
+    const newPathname = `${window.location.pathname}?${searchParams.toString()}`
+
+    return newPathname;
 }
 
