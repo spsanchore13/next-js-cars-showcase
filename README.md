@@ -33,24 +33,19 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-<figure>
+### Landing Page
+
 <img src="https://i.imgur.com/txfZVf1.png" width="100%">
-<figcaption align = "center"><b>Landing Page</b></figcaption>
-</figure>
 
-<figure>
+### Car Catalogue
+
 <img src="https://i.imgur.com/4fnCPTz.png" width="100%">
-<figcaption align = "center"><b>Cars Catalogue</b></figcaption>
-</figure>
 
+### Car Modal
 
-<figure>
 <img src="https://i.imgur.com/spTNPVY.png" width="100%">
-<figcaption align = "center"><b>Car Modal</b></figcaption>
-</figure>
 
+### Footer
 
-<figure>
 <img src="https://i.imgur.com/YYsV9Co.png" width="100%">
-<figcaption align = "center"><b>Footer</b></figcaption>
-</figure>
+
