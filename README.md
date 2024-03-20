@@ -1,4 +1,6 @@
 
+![next-js-cars-showcase](https://socialify.git.ci/spsanchore13/next-js-cars-showcase/image?language=1&owner=1&name=1&stargazers=1&theme=Light)
+
 ### Landing Page
 
 <img src="https://i.imgur.com/txfZVf1.png" width="100%">
