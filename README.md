@@ -1,19 +1,40 @@
+<h1 align="center" id="title">Car Showcase Application</h1>
 
-![next-js-cars-showcase](https://socialify.git.ci/spsanchore13/next-js-cars-showcase/image?language=1&owner=1&name=1&stargazers=1&theme=Light)
+<p align="center"><img src="https://socialify.git.ci/spsanchore13/next-js-cars-showcase/image?language=1&amp;owner=1&amp;name=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
 
-### Landing Page
+<p id="description">The Car Showcase Next.js App is a web application designed to provide a visually appealing and interactive platform for showcasing various car models. It leverages the power of Next.js a popular React framework to create a seamless and efficient user experience.</p>
+
+<h2>🚀 Demo</h2>
+
+[next-js-cars-showcase.vercel.app](next-js-cars-showcase.vercel.app)
+
+  
+  
+<h2>🧐 Features</h2>
+
+Here're some of the project's best features:
+
+*   Interactive and responsive landing page
+*   Searching & Filtering
+*   Modal for view more card details
+*   Lazy loading
+
+
+<h2>Project Screenshots:</h2>
+
+### 1. Landing Page
 
 <img src="https://i.imgur.com/txfZVf1.png" width="100%">
 
-### Car Catalogue
+### 2. Car Catalogue
 
 <img src="https://i.imgur.com/4fnCPTz.png" width="100%">
 
-### Car Modal
+### 3. Car Modal
 
 <img src="https://i.imgur.com/spTNPVY.png" width="100%">
 
-### Footer
+### 4. Footer
 
 <img src="https://i.imgur.com/YYsV9Co.png" width="100%">
 
