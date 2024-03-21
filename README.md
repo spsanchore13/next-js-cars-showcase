@@ -17,7 +17,21 @@ Here're some of the project's best features:
 *   Interactive and responsive landing page
 *   Searching & Filtering
 *   Modal for view more card details
-*   Lazy loading
+*   Lazy loading  
+  
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   HTML
+*   CSS
+*   JavaScript
+*   TypeScript
+*   React.js
+*   Next.js
+*   Tailwind CSS
+*   Headless UI
+*   Rapid Car API
 
 
 <h2>Project Screenshots:</h2>
