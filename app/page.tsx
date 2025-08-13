@@ -31,7 +31,6 @@ export default function Home() {
         make: manufacturer.toLowerCase() || "",
         year: year || 2022,
         fuel_type: fuel.toLowerCase() || "",
-        limit: limit || 10,
         model: model.toLowerCase() || "",
       });
 
@@ -78,7 +77,7 @@ export default function Home() {
           </div>
         </div>
 
-        {allCars.length > 0 ? (
+        {allCars?.length > 0 ? (
           <section>
             <div className="home__cars-wrapper">
               {allCars?.map((car, index) => (

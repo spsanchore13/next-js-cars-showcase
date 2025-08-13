@@ -2,7 +2,7 @@
 
 import { CarProps } from "@/types";
 import Image from "next/image";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { generateCarImageUrl } from "@/utils";
 
@@ -13,6 +13,20 @@ interface CarDetailsProps {
 }
 
 const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
+  const [imageErrors, setImageErrors] = useState<{ [key: string]: boolean }>(
+    {}
+  );
+
+  const handleImageError = (imageKey: string) => {
+    setImageErrors((prev) => ({ ...prev, [imageKey]: true }));
+  };
+
+  const getFallbackImage = (text: string) => {
+    return `https://via.placeholder.com/400x300/2B59FF/FFFFFF?text=${encodeURIComponent(
+      text
+    )}`;
+  };
+
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -57,40 +71,60 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                 <div className="flex-1 flex-col gap-3">
                   <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                     <Image
-                      src={generateCarImageUrl(car)}
+                      src={
+                        imageErrors["main"]
+                          ? getFallbackImage(`${car.make} ${car.model}`)
+                          : generateCarImageUrl(car)
+                      }
                       alt="car model"
                       fill
                       priority
                       className="object-contain"
+                      onError={() => handleImageError("main")}
                     />
                   </div>
 
                   <div className="flex gap-3">
                     <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                       <Image
-                        src={generateCarImageUrl(car, "29")}
+                        src={
+                          imageErrors["angle1"]
+                            ? getFallbackImage(`${car.make} ${car.model} Front`)
+                            : generateCarImageUrl(car, "29")
+                        }
                         alt="car model"
                         fill
                         priority
                         className="object-contain"
+                        onError={() => handleImageError("angle1")}
                       />
                     </div>
                     <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                       <Image
-                        src={generateCarImageUrl(car, "33")}
+                        src={
+                          imageErrors["angle2"]
+                            ? getFallbackImage(`${car.make} ${car.model} Side`)
+                            : generateCarImageUrl(car, "33")
+                        }
                         alt="car model"
                         fill
                         priority
                         className="object-contain"
+                        onError={() => handleImageError("angle2")}
                       />
                     </div>
                     <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
                       <Image
-                        src={generateCarImageUrl(car, "13")}
+                        src={
+                          imageErrors["angle3"]
+                            ? getFallbackImage(`${car.make} ${car.model} Rear`)
+                            : generateCarImageUrl(car, "13")
+                        }
                         alt="car model"
                         fill
                         priority
                         className="object-contain"
+                        onError={() => handleImageError("angle3")}
                       />
                     </div>
                   </div>
